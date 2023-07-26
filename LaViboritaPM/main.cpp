@@ -54,8 +54,6 @@ void Pelota::start(){
 	}
 }
 
-
-
 void Pelota::borrar(){
 	gotoxy(x,y);
 	textcolor(7);
@@ -69,36 +67,25 @@ void Pelota::dibujar(){
 }
 
 void Pelota::mover(){
-	if (_kbhit())
-	{
-	int tecla = getch();
-	while (x <= bordeDer && x >= bordeIzq && y >= bordeSup && y <= bordeInf)
-	{
-	if (tecla == 72 ) { //arriba
-		direccionX = 0;
+	
+	
+	if (x >= bordeDer) {
+		direccionX = -1;
+	}
+	if (x <= bordeIzq) {
+		direccionX = 1;
+	}
+	if (y <= bordeSup) {
 		direccionY = 1;
 	}
-	
-	if (tecla == 80) { //abajo
-		direccionX = 0;
+	if (y >= bordeInf) {
 		direccionY = -1;
-	}
-	if ( tecla == 75) { //izquierda
-		direccionX = -1;
-		direccionY = 0;		
-	}
-	if ( tecla == 77) {//derecha
-		direccionX = 1;
-		direccionY = 0;
 	}
 	x = x + (1 * direccionX);
 	y = y + (1 * direccionY);
-    }
+    
+
 }
-}
-
-
-
 
 
 
