@@ -84,8 +84,7 @@ void Pelota::mover(){
 	}
 	x = x + (1 * direccionX);
 	gotoxy(x,y);
-	y = y + (1 * direccionY);
-    
+	y = y + (1 * direccionY);    
 
 }
 
