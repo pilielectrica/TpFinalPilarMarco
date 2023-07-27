@@ -19,7 +19,7 @@ protected:
 	int col;
 	int x,y;
 	void borrar();
-	void dibujar();
+	virtual void dibujar();
 	void mover();
 	
 public:
@@ -27,7 +27,7 @@ public:
 	Pelota(int velocidad,int color);
 	virtual void start();
 	void cambiarDireccion(int dx, int dy);
-	
+	char figurapelotita = 'O';
 	
 };
 
@@ -64,7 +64,7 @@ void Pelota::borrar(){
 
 void Pelota::dibujar(){
 	gotoxy(x,y);
-	cout<<'O';
+	cout<<figurapelotita;
 }
 
 void Pelota::mover(){
@@ -96,8 +96,14 @@ public:
 	void cambiarDireccion();
 	Viborita();
 	void start();
+	char figuraviborita = 'O';
+	void dibujar();
 };
-
+void Viborita :: dibujar()
+{
+	gotoxy(x,y);
+	cout<<figuraviborita;
+}
 void Viborita :: cambiarDireccion ()
 {
 		if (_kbhit())
