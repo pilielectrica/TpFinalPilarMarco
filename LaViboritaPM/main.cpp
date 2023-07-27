@@ -25,7 +25,7 @@ protected:
 public:
 	
 	Pelota(int velocidad,int color);
-	void start();
+	virtual void start();
 	void cambiarDireccion(int dx, int dy);
 	
 	
@@ -93,23 +93,56 @@ class Viborita : public Pelota
 {
 public: 
 	Viborita(int vel, int col) : Pelota (vel, col){};
-	void cambiarDireccion(int dx, int dy);
+	void cambiarDireccion();
 	Viborita();
+	void start();
 };
 
-void Viborita :: cambiarDireccion (int dx, int dy)
+void Viborita :: cambiarDireccion ()
 {
-	direccionX = dx;
-	direccionY = dy;
+		if (_kbhit())
+		{
+			int tecla = _getch();
+			
+			switch(tecla)
+			{
+			case 72: //arriba
+				direccionX = 0;
+				direccionY = -1;
+			    break;	
+			case 75: //izquierda
+				direccionX = -1;
+				direccionY = 0;
+			    break;
+			case 77: //derecha
+				direccionX = 1;
+				direccionY = 0;
+				break;
+			case 80: //abajo
+			    direccionX = 0;
+				direccionY = 1;
+				
+				
+			}
+		}
 }
-Viborita :: Viborita()
+void Viborita :: start()
 {
+	textcolor(col);
 	
+	
+	if(tempo+paso<clock()){
+		borrar();		
+		mover();
+		cambiarDireccion();
+		dibujar();
+		tempo=clock();
+	}
 }
 int main(int argc, char *argv[]) {
 	
-	Pelota *pelotita = new Pelota(50,1);
-	Viborita *viborita = new Viborita(80,14);
+	Pelota *pelotita = new Pelota(30,1);
+	Pelota *viborita = new Viborita(20,14);
 	
 	while(true){
 		pelotita->start();
