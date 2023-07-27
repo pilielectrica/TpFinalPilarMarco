@@ -11,6 +11,7 @@ const int bordeInf = 20;
 
 class Pelota{
 	
+protected:	
 	clock_t tempo;
 	clock_t paso;
 	int direccionX;
@@ -25,7 +26,7 @@ public:
 	
 	Pelota(int velocidad,int color);
 	void start();
-	
+	void cambiarDireccion(int dx, int dy);
 	
 	
 };
@@ -82,21 +83,37 @@ void Pelota::mover(){
 		direccionY = -1;
 	}
 	x = x + (1 * direccionX);
+	gotoxy(x,y);
 	y = y + (1 * direccionY);
     
 
 }
 
+class Viborita : public Pelota
+{
+public: 
+	Viborita(int vel, int col) : Pelota (vel, col){};
+	void cambiarDireccion(int dx, int dy);
+	Viborita();
+};
 
-
+void Viborita :: cambiarDireccion (int dx, int dy)
+{
+	direccionX = dx;
+	direccionY = dy;
+}
+Viborita :: Viborita()
+{
+	
+}
 int main(int argc, char *argv[]) {
 	
-	Pelota *p1 = new Pelota(50,1);
-	Pelota *p2 = new Pelota(80,14);
+	Pelota *pelotita = new Pelota(50,1);
+	Viborita *viborita = new Viborita(80,14);
 	
 	while(true){
-		p1->start();
-		p2->start();
+		pelotita->start();
+		viborita->start();
 	}
 	
 	
