@@ -189,7 +189,7 @@ bool Pelotita::comprobarchoque()
 void Pelotita::cambiarposicion()
 {
 	if (comprobarchoque() == true)
-	{setx(rand()%20 + 1);
+	{setx(rand()%80 + 1);
 	sety(rand()%20 + 1);
 	};
 }
