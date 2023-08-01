@@ -19,8 +19,8 @@ protected:
 	int col;
 	int x,y;
 	void borrar();
-	virtual void dibujar();
-	virtual void mover();
+	void dibujar();
+	void mover();
 	
 	
 public:
@@ -31,6 +31,8 @@ public:
 	string figura = "O";
 	int getx ();
 	int gety();
+	void setx(int posx);
+	void sety(int posy);
 	
 };
 
@@ -99,6 +101,14 @@ int Pelota :: gety()
 {
 	return y;
 }
+void Pelota :: setx(int posx)
+{
+	x = posx;
+}
+void Pelota :: sety(int posy)
+{
+	y = posy;
+}
 class Viborita : public Pelota
 {
 public: 
@@ -106,7 +116,6 @@ public:
 	void cambiarDireccion();
 	Viborita();
 	void start();
-	void dibujar();
 };
 
 void Viborita :: cambiarDireccion ()
@@ -156,29 +165,57 @@ class Pelotita : public Pelota
 {
 public:
 	Pelotita(int vel, int col) : Pelota (vel, col){};
-	void mover();
-	bool comprobarchoque(Viborita* posicionViborita);
+	void setViborita(Viborita* pViborita);
+	bool comprobarchoque();
+	void cambiarposicion();
+	void start();
 	
 private:
-	/*void start();*/
+	Viborita* posicionViborita;
 };
 
-bool Pelotita::comprobarchoque(Viborita* posicionViborita)
+void Pelotita::setViborita(Viborita* pViborita) 
+{
+	posicionViborita = pViborita;
+}
+
+bool Pelotita::comprobarchoque()
 {
 	if ((posicionViborita->getx() == getx()) &&(posicionViborita->gety() == gety()) )
 	{
 		return true;
 	}
 }
+void Pelotita::cambiarposicion()
+{
+	if (comprobarchoque() == true)
+	{setx(rand()%20 + 1);
+	sety(rand()%20 + 1);
+	};
+}
+void Pelotita::start(){
+	textcolor(col);
+	
+	
+	if(tempo+paso<clock()){
+		borrar();
+	    comprobarchoque();
+		cambiarposicion();
+		dibujar();
+		tempo=clock();
+	}
+}
 
 int main(int argc, char *argv[]) {
 	
-	Pelota *pelotita = new Pelotita(30,1);
-	Pelota *viborita = new Viborita(20,14);
+	Pelotita pelotita(30,1);
+	Viborita viborita(20,14);
+	
+	pelotita.setViborita(&viborita);
 	
 	while(true){
-		pelotita->start();
-		viborita->start();
+		pelotita.start();
+		viborita.start();
 	}
 	
 	
