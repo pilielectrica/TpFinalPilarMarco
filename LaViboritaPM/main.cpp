@@ -20,14 +20,17 @@ protected:
 	int x,y;
 	void borrar();
 	virtual void dibujar();
-	void mover();
+	virtual void mover();
+	
 	
 public:
 	
 	Pelota(int velocidad,int color);
 	virtual void start();
 	void cambiarDireccion(int dx, int dy);
-	char figurapelotita = 'O';
+	string figura = "O";
+	int getx ();
+	int gety();
 	
 };
 
@@ -64,7 +67,7 @@ void Pelota::borrar(){
 
 void Pelota::dibujar(){
 	gotoxy(x,y);
-	cout<<figurapelotita;
+	cout<<figura;
 }
 
 void Pelota::mover(){
@@ -88,6 +91,14 @@ void Pelota::mover(){
 
 }
 
+int Pelota :: getx()
+{
+	return x;
+}
+int Pelota :: gety()
+{
+	return y;
+}
 class Viborita : public Pelota
 {
 public: 
@@ -95,14 +106,9 @@ public:
 	void cambiarDireccion();
 	Viborita();
 	void start();
-	char figuraviborita = 'O';
 	void dibujar();
 };
-void Viborita :: dibujar()
-{
-	gotoxy(x,y);
-	cout<<figuraviborita;
-}
+
 void Viborita :: cambiarDireccion ()
 {
 		if (_kbhit())
@@ -144,9 +150,30 @@ void Viborita :: start()
 		tempo=clock();
 	}
 }
+
+
+class Pelotita : public Pelota
+{
+public:
+	Pelotita(int vel, int col) : Pelota (vel, col){};
+	void mover();
+	bool comprobarchoque(Viborita* posicionViborita);
+	
+private:
+	/*void start();*/
+};
+
+bool Pelotita::comprobarchoque(Viborita* posicionViborita)
+{
+	if ((posicionViborita->getx() == getx()) &&(posicionViborita->gety() == gety()) )
+	{
+		return true;
+	}
+}
+
 int main(int argc, char *argv[]) {
 	
-	Pelota *pelotita = new Pelota(30,1);
+	Pelota *pelotita = new Pelotita(30,1);
 	Pelota *viborita = new Viborita(20,14);
 	
 	while(true){
