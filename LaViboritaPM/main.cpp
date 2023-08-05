@@ -1,6 +1,7 @@
 #include <iostream>
 #include <conio2.h>
 #include <ctime>
+#include <deque>
 
 using namespace std;
 
@@ -21,6 +22,7 @@ protected:
 	void borrar();
 	void dibujar();
 	void mover();
+/*	int veceschoque = 0;*/
 	
 	
 public:
@@ -116,7 +118,9 @@ public:
 	void cambiarDireccion();
 	Viborita();
 	void start();
-	void alargarviborita();
+private:
+	
+
 };
 
 void Viborita :: cambiarDireccion ()
@@ -147,29 +151,20 @@ void Viborita :: cambiarDireccion ()
 			}
 		}
 }
+
 void Viborita :: start()
 {
 	textcolor(col);
 	
 	
 	if(tempo+paso<clock()){
-		borrar();		
+		borrar();	
 		mover();
 		cambiarDireccion();
 		dibujar();
 		tempo=clock();
 	}
 }
-
-//void Viborita :: alargarviborita()
-//{  
-//	borrar();
-//    mover();
-//	cambiarDireccion();
-//	gotoxy(x-veces,y-veces);
-//	cout<<"O";
-//	tempo=clock();
-//}
 
 class Pelotita : public Pelota
 {
@@ -179,8 +174,6 @@ public:
 	bool comprobarchoque();
 	void cambiarposicion();
 	void start();
-	int veceschoque = 0;
-	void alargarviborita();
 	
 private:
 	Viborita* posicionViborita;
@@ -204,20 +197,7 @@ void Pelotita::cambiarposicion()
 	if (comprobarchoque() == true)
 	{setx(rand()%80 + 1);
 	sety(rand()%20 + 1);
-	veceschoque+1;
 	};
-}
-void Pelotita::alargarviborita()
-{
-	if (comprobarchoque() == true)
-	{    
-		borrar();
-		mover();
-		posicionViborita->cambiarDireccion();
-		gotoxy(x-veceschoque,y-veceschoque);
-		cout<<"O";
-		tempo=clock();
-	}
 }
 void Pelotita::start(){
 	textcolor(col);
@@ -228,7 +208,6 @@ void Pelotita::start(){
 	    comprobarchoque();
 		cambiarposicion();
 		dibujar();
-		alargarviborita();
 		tempo=clock();
 	}
 }
