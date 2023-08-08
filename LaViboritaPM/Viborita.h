@@ -15,10 +15,8 @@ public:
 	Viborita();
 	void alargarViborita();
 	void start();
-	void mover();
 	
-private:
-	deque<pair<int, int>> segmentos;
+
 };
 
 #endif

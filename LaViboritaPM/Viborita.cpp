@@ -34,24 +34,7 @@ void Viborita :: cambiarDireccion ()
 		}
 	}
 }
-void Viborita::alargarViborita()
-{
-	segmentos.push_back(make_pair(getx(), gety())); // Add a new segment to the end of the Viborita
-}
-void Viborita::mover() 
-{
-	if (!segmentos.empty()) {
-		int lastX = segmentos.back().first;
-		int lastY = segmentos.back().second;
-		segmentos.pop_back();
-		segmentos.push_front(make_pair(getx(), gety()));
-		setx(lastX);
-		sety(lastY);
-	}	
-	
-	Pelota::mover(); // Call the base class mover() if there are no segments
-	
-}
+
 void Viborita :: start()
 {
 	textcolor(col);

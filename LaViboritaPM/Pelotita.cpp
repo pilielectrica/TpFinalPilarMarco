@@ -32,11 +32,7 @@ void Pelotita::start(){
 	
 	if(tempo+paso<clock()){
 		borrar();
-		if (comprobarchoque())
-		{
-	    posicionViborita->alargarViborita();
 		cambiarposicion();
-		}
 		dibujar();
 		tempo=clock();
 	}
