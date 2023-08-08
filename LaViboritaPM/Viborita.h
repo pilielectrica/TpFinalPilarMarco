@@ -13,7 +13,6 @@ public:
 	Viborita(int vel, int col) : Pelota (vel, col){};
 	void cambiarDireccion();
 	Viborita();
-	void alargarViborita();
 	void start();
 	
 

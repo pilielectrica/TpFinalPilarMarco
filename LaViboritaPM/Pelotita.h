@@ -18,6 +18,7 @@ public:
 	bool comprobarchoque();
 	void cambiarposicion();
 	void start();
+	Pelotita();
 	
 private:
 	Viborita* posicionViborita;
