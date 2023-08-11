@@ -1,4 +1,6 @@
 #include "Pelotita.h"
+#include "Juego.h"
+#include "Pelota.h"
 #include <iostream>
 #include <conio2.h>
 #include <ctime>
@@ -6,10 +8,10 @@
 
 using namespace std;
 
-void Pelotita::setViborita(Viborita* pViborita) 
-{
-	posicionViborita = pViborita;
-}
+//void Pelotita::setViborita(Viborita* pViborita) 
+//{
+//	posicionViborita = pViborita;
+//}
 
 //bool Pelotita::comprobarchoque()
 //{
@@ -19,13 +21,16 @@ void Pelotita::setViborita(Viborita* pViborita)
 //	}
 //	return false;
 //}
-//void Pelotita::cambiarposicion()
-//{
-//	if (comprobarchoque() == true)
-//	{setx(rand()%80 + 1);
-//	sety(rand()%20 + 1);
-//	};
-//}
+
+void Pelotita::cambiarposicion()
+{  juego = new Juego;
+	if (juego->comprobarChoque() == true)
+	{
+	setx(rand()%80 + 1);
+	sety(rand()%20 + 1);
+	}
+	
+}
 void Pelotita::start(){
 	textcolor(col);
 	

@@ -1,9 +1,10 @@
 #include <iostream>
 #include <conio2.h>
-#include <ctime>
-#include <deque>
+
 #ifndef PELOTA_H
 #define PELOTA_H
+#include <ctime>
+#include <string>
 using namespace std;
 
 class Pelota 
@@ -18,8 +19,7 @@ protected:
 	void borrar();
 	void dibujar();
 	void mover();
-	void setx(int posx);
-	void sety(int posy);
+	
 	/*	int veceschoque = 0;*/
 public:
 	
@@ -29,7 +29,8 @@ public:
 	string figura = "O";
 	int getx ();
 	int gety();
-	
+	void setx(int posx);
+	void sety(int posy);
 };
 
 #endif

@@ -1,20 +1,23 @@
 #ifndef JUEGO_H
 #define JUEGO_H
-#include "Pelota.h"
 #include "Viborita.h"
-#include "Pelotita.h"
+#include <iostream>
+#include <conio2.h>
 
-class Juego : public Pelotita
+class Pelotita;
+
+class Juego
 {
 public:
-	Juego() : Pelotita(){};
+	Juego();
 	bool comprobarChoque();
 	void cambiarPosicion();
 	void alargarViborita();
+	void startViboritaYPelotita();
 
 private:
 	Viborita viborita;
-	Pelotita pelotita;
+	Pelotita* pelotita;
 };
 
 #endif

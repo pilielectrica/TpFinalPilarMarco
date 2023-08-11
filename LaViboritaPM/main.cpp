@@ -3,6 +3,7 @@
 #include <ctime>
 #include <deque>
 #include "Pelotita.h"
+#include "Juego.h"
 
 using namespace std;
 
@@ -14,16 +15,18 @@ const int bordeInf = 20;
 
 int main(int argc, char *argv[]) {
 	
-	Pelotita pelotita(30,1);
-	Viborita viborita(20,14);
+//	Pelotita pelotita(30,1);
+//	Viborita viborita(20,14);
 	
-	pelotita.setViborita(&viborita);
+	/*pelotita.setViborita(&viborita);*/
 	
-	while(true){
-		pelotita.start();
-		viborita.start();
-	}
-	
+//	while(true){
+//		pelotita.start();
+//		viborita.start();
+//	}
+//	
+	Juego Jugar;
+	Jugar.startViboritaYPelotita();
 	
 	
 	return 0;

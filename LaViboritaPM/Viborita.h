@@ -15,8 +15,8 @@ public:
 	Viborita();
 	void start();
 	
+	private:
 
-};
 
 #endif
 
