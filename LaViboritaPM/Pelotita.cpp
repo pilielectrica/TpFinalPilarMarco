@@ -22,22 +22,21 @@ using namespace std;
 //	return false;
 //}
 
-void Pelotita::cambiarposicion()
-{  juego = new Juego;
-	if (juego->comprobarChoque() == true)
-	{
-	setx(rand()%80 + 1);
-	sety(rand()%20 + 1);
-	}
-	
-}
+//void Pelotita::cambiarposicion()
+//{  juego = new Juego();
+//	if (juego->comprobarChoque() == true)
+//	{
+//	setx(rand()%80 + 1);
+//	sety(rand()%20 + 1);
+//	}
+//	
+//}
 void Pelotita::start(){
 	textcolor(col);
 	
 	
 	if(tempo+paso<clock()){
 		borrar();
-		cambiarposicion();
 		dibujar();
 		tempo=clock();
 	}

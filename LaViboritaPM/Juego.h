@@ -1,10 +1,12 @@
 #ifndef JUEGO_H
 #define JUEGO_H
-#include "Viborita.h"
 #include <iostream>
 #include <conio2.h>
+#include "Viborita.h"
+#include "Pelotita.h"
 
-class Pelotita;
+
+
 
 class Juego
 {
@@ -17,7 +19,7 @@ public:
 
 private:
 	Viborita viborita;
-	Pelotita* pelotita;
+	Pelotita pelotita;
 };
 
 #endif

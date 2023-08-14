@@ -3,8 +3,8 @@
 #include "Pelota.h"
 #include "Juego.h"
 #include <iostream>
-//#include <conio2.h>
-//#include <ctime>
+#include <conio2.h>
+#include <ctime>
 #include "Viborita.h"
 
 
@@ -23,8 +23,7 @@ public:
 	Pelotita();
 	
 private:
-	/*Viborita* posicionViborita;*/
- Juego* juego;
+
 };
 
 #endif

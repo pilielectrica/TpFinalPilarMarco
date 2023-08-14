@@ -1,10 +1,11 @@
-#include <iostream>
-#include <conio2.h>
-
 #ifndef PELOTA_H
 #define PELOTA_H
+#include <iostream>
+#include <conio2.h>
 #include <ctime>
 #include <string>
+
+
 using namespace std;
 
 class Pelota 
@@ -25,7 +26,6 @@ public:
 	
 	Pelota(int velocidad,int color);
 	virtual void start();
-	void cambiarDireccion(int dx, int dy);
 	string figura = "O";
 	int getx ();
 	int gety();

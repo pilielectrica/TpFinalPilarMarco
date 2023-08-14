@@ -1,7 +1,6 @@
 #include <iostream>
 #include <conio2.h>
 #include <ctime>
-#include <deque>
 #include "Pelota.h"
 using namespace std;
 
