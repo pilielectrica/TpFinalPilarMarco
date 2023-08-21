@@ -11,7 +11,7 @@
 class Juego
 {
 public:
-	Juego();
+	Juego(){};
 	bool comprobarChoque();
 	void cambiarPosicion();
 	void alargarViborita();

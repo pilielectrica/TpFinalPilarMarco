@@ -4,6 +4,8 @@
 #include <deque>
 #include "Pelotita.h"
 #include "Juego.h"
+#include "Viborita.h"
+#include "Pelota.h"
 
 using namespace std;
 

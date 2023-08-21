@@ -2,9 +2,17 @@
 
 
 
-Juego::Juego(){
+void Juego::startViboritaYPelotita()
+{  
+	
 	viborita =  Viborita(20,14);
 	pelotita =  Pelotita(30,1);
+	while (true)
+	{
+	viborita.start();
+	pelotita.start();
+	}
+	
 }
 
 bool Juego::comprobarChoque()
@@ -24,10 +32,5 @@ void Juego::cambiarPosicion()
 	}	
 }
 
-void Juego::startViboritaYPelotita()
-{
-	
-		viborita.start();
-		pelotita.start();
-	
-}
+
+

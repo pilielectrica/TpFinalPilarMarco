@@ -1,11 +1,10 @@
 #ifndef PELOTITA_H
 #define PELOTITA_H
 #include "Pelota.h"
-#include "Juego.h"
 #include <iostream>
 #include <conio2.h>
 #include <ctime>
-#include "Viborita.h"
+
 
 
 
@@ -18,7 +17,7 @@ public:
 	Pelotita(int vel, int col) : Pelota (vel, col){};
 	/*void setViborita(Viborita* pViborita);*/
 //	bool comprobarchoque();
-    void cambiarposicion();
+  /*  void cambiarposicion();*/
 	void start();
 	Pelotita();
 	

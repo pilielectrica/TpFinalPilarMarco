@@ -1,5 +1,4 @@
 #include "Pelotita.h"
-#include "Juego.h"
 #include "Pelota.h"
 #include <iostream>
 #include <conio2.h>
