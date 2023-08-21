@@ -16,8 +16,8 @@ Pelota::Pelota(int velocidad, int color=WHITE){
 	col=color;
 	direccionX = 1;
 	direccionY = 1;
-	x=rand()%20+1;
-	y=rand()%20+1;
+	x=rand()%20+2;
+	y=rand()%20+2;
 	
 }
 
@@ -81,5 +81,20 @@ void Pelota :: setx(int posx)
 void Pelota :: sety(int posy)
 {
 	y = posy;
+}
+
+int Pelota :: getcol()
+{
+	return col;
+}clock_t Pelota :: getpaso()
+{
+	return paso;
+}
+
+clock_t Pelota :: gettempo()
+	
+{   
+
+	return tempo;
 }
 

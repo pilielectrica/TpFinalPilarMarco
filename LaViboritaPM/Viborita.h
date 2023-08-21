@@ -14,7 +14,7 @@ public:
 	Viborita(int vel, int col) : Pelota (vel, col){};
 	void cambiarDireccion();
 	void start();
-	Viborita();
+	Viborita(){};
 	private:
 
 };

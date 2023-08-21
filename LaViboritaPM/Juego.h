@@ -2,8 +2,10 @@
 #define JUEGO_H
 #include <iostream>
 #include <conio2.h>
+#include <ctime>
 #include "Viborita.h"
-#include "Pelotita.h"
+#include "Comida.h"
+#include "Tablero.h"
 
 
 
@@ -11,15 +13,19 @@
 class Juego
 {
 public:
-	Juego(){};
+	Juego();
 	bool comprobarChoque();
 	void cambiarPosicion();
 	void alargarViborita();
 	void startViboritaYPelotita();
+	void startComida();
 
 private:
 	Viborita viborita;
-	Pelotita pelotita;
+	Comida comida;
+	
+	Tablero tablero;
+	clock_t newtempo;
 };
 
 #endif

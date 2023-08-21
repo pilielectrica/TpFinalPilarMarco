@@ -17,13 +17,14 @@ protected:
 	int direccionY;
 	int col;
 	int x,y;
-	void borrar();
-	void dibujar();
-	void mover();
+	
+	Pelota(){};
 	
 	/*	int veceschoque = 0;*/
 public:
-	
+	void borrar();
+	void dibujar();
+	void mover();
 	Pelota(int velocidad,int color);
 	virtual void start();
 	string figura = "O";
@@ -31,6 +32,10 @@ public:
 	int gety();
 	void setx(int posx);
 	void sety(int posy);
+	int getcol();
+	clock_t gettempo();
+	clock_t getpaso();
+	clock_t newtempo;
 };
 
 #endif

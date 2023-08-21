@@ -1,23 +1,18 @@
 #include "Juego.h"
+#include <ctime>
 
-
-
-void Juego::startViboritaYPelotita()
-{  
-	
+Juego::Juego()
+{
 	viborita =  Viborita(20,14);
-	pelotita =  Pelotita(30,1);
-	while (true)
-	{
-	viborita.start();
-	pelotita.start();
-	}
-	
+	comida =  Comida(30,1);
+	tablero = Tablero();
 }
+
+
 
 bool Juego::comprobarChoque()
 { 
-	if ((viborita.getx() == pelotita.getx()) &&(viborita.gety() == pelotita.gety()) )
+	if ((viborita.getx() == comida.getx()) &&(viborita.gety() == comida.gety()) )
 	{
 		return true;
 	}
@@ -27,10 +22,33 @@ void Juego::cambiarPosicion()
 {
 	if (comprobarChoque() == true)
 	{
-		pelotita.setx(rand()%80 + 1);
-		pelotita.sety(rand()%20 + 1);
+		comida.setx(rand()%80 + 2);
+		comida.sety(rand()%20 + 2);
 	}	
 }
 
+void Juego::startComida(){
+	textcolor(comida.getcol());
+	
+	
+	if(comida.gettempo()+comida.getpaso()<clock()){
+		comida.borrar();
+		cambiarPosicion();
+		comida.dibujar();
+	    newtempo = comida.gettempo();
+		newtempo = clock();
+	}
+}
 
-
+void Juego::startViboritaYPelotita()
+{  
+	
+	
+	while (true)
+	{   
+		tablero.dibujarTablero();
+		viborita.start();
+		startComida();
+	}
+	
+}

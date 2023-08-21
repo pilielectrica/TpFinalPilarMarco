@@ -11,15 +11,16 @@
 using namespace std;
 
 
-class Pelotita :  public Pelota
+ class Comida :  public Pelota
 {
 public:
-	Pelotita(int vel, int col) : Pelota (vel, col){};
+	Comida(int vel, int col) : Pelota (vel, col){};
 	/*void setViborita(Viborita* pViborita);*/
 //	bool comprobarchoque();
   /*  void cambiarposicion();*/
-	void start();
-	Pelotita();
+	/*void start();*/
+	Comida(){};
+	
 	
 private:
 

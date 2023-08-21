@@ -1,4 +1,4 @@
-#include "Pelotita.h"
+#include "Comida.h"
 #include "Pelota.h"
 #include <iostream>
 #include <conio2.h>
@@ -30,13 +30,13 @@ using namespace std;
 //	}
 //	
 //}
-void Pelotita::start(){
-	textcolor(col);
-	
-	
-	if(tempo+paso<clock()){
-		borrar();
-		dibujar();
-		tempo=clock();
-	}
-}
+//void Pelotita::start(){
+//	textcolor(col);
+//	
+//	
+//	if(tempo+paso<clock()){
+//		borrar();
+//		dibujar();
+//		tempo=clock();
+//	}
+//}

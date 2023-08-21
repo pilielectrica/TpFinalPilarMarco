@@ -2,10 +2,11 @@
 #include <conio2.h>
 #include <ctime>
 #include <deque>
-#include "Pelotita.h"
+#include "Comida.h"
 #include "Juego.h"
 #include "Viborita.h"
 #include "Pelota.h"
+#include "Tablero.h"
 
 using namespace std;
 
@@ -27,6 +28,7 @@ int main(int argc, char *argv[]) {
 //		viborita.start();
 //	}
 //	
+	
 	Juego Jugar;
 	Jugar.startViboritaYPelotita();
 	
