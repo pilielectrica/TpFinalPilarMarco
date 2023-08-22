@@ -19,6 +19,7 @@ public:
 	void alargarViborita();
 	void startViboritaYPelotita();
 	void startComida();
+	bool GameOver();
 
 private:
 	Viborita viborita;

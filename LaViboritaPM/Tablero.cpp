@@ -1,38 +1,36 @@
 #include <iostream>
+#include <windows.h>
 #include <conio2.h>
 #include "Tablero.h"
 #include <string>
 
 using namespace std;
-const int bordeSup = 1;
-const int bordeIzq = 1;
-const int bordeDer = 80;
-const int bordeInf = 20;
 
 void Tablero :: dibujarTablero()
-{
-	system ("cls");
+{  SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),{0,0});
+	
 
-cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+                                                                               +"<<endl;
-cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"<<endl;
+cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "+                                                                              +"<<endl;
+cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"<<endl;
+
+
 
 }

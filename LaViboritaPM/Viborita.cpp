@@ -1,6 +1,7 @@
 #include "Viborita.h"
 #include <iostream>
 #include <conio2.h>
+#include <windows.h>
 #include <ctime>
 #include <deque>
 #include "Pelota.h"
@@ -29,8 +30,6 @@ void Viborita :: cambiarDireccion ()
 		case 80: //abajo
 			direccionX = 0;
 			direccionY = 1;
-			
-			
 		}
 	}
 }
@@ -38,13 +37,13 @@ void Viborita :: cambiarDireccion ()
 void Viborita :: start()
 {
 	textcolor(col);
-	
-	
-	if(tempo+paso<clock()){
-		borrar();	
+		
+	if(tempo+paso<clock())
+	{
+		borrar();
 		mover();
 		cambiarDireccion();
 		dibujar();
-		tempo=clock();
+		tempo=clock();	
 	}
 }
