@@ -15,10 +15,6 @@ using namespace std;
 {
 public:
 	Comida(int vel, int col) : Pelota (vel, col){};
-	/*void setViborita(Viborita* pViborita);*/
-//	bool comprobarchoque();
-  /*  void cambiarposicion();*/
-	/*void start();*/
 	Comida(){};
 	
 	

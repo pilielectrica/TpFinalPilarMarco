@@ -34,16 +34,16 @@ void Viborita :: cambiarDireccion ()
 	}
 }
 
-void Viborita :: start()
-{
-	textcolor(col);
-		
-	if(tempo+paso<clock())
-	{
-		borrar();
-		mover();
-		cambiarDireccion();
-		dibujar();
-		tempo=clock();	
-	}
-}
+//void Viborita :: start()
+//{
+//	textcolor(col);
+//		
+//	if(tempo+paso<clock())
+//	{
+//		borrar();
+//		mover();
+//		cambiarDireccion();
+//		dibujar();
+//		tempo=clock();	
+//	}
+//}
