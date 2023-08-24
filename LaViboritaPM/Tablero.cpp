@@ -7,8 +7,9 @@
 using namespace std;
 
 void Tablero :: dibujarTablero()
-{  SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),{0,0});
+{  SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),{0,0});// para congelar pantalla y parar el flickering
 	
+textcolor(BLUE);
 
 cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"<<endl;
 cout << "+                                                                              +"<<endl;
@@ -30,7 +31,6 @@ cout << "+                                                                      
 cout << "+                                                                              +"<<endl;
 cout << "+                                                                              +"<<endl;
 cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"<<endl;
-
 }
 
 

@@ -18,6 +18,7 @@ void Viborita :: cambiarDireccion ()
 		case 72: //arriba
 			direccionX = 0;
 			direccionY = -1;
+			Sleep(25);
 			
 			break;	
 		case 75: //izquierda
@@ -33,6 +34,7 @@ void Viborita :: cambiarDireccion ()
 		case 80: //abajo
 			direccionX = 0;
 			direccionY = 1;
+			Sleep(25);
 			
 		}
 	}
@@ -49,14 +51,14 @@ void Viborita :: dibujar ()
 		cout << "O";
 	}
 }
-void Viborita::guardarPosicion() // funcion que guarda la posicion de la serpiente en la matriz
+void Viborita::guardarPosicion() 
 {
-	posicionCuerpo[indiceParaMovimiento][0] = x; // guardamos la posicion posicionX en la matriz
-	posicionCuerpo[indiceParaMovimiento][1] = y; // guardamos la posicion posicionY en la matriz
-	indiceParaMovimiento++;              // incrementamos el numero de partes del cuerpo de la serpiente
-	if (indiceParaMovimiento == largodecola) // si el numero de partes del cuerpo es igual al tamaño de la serpiente
+	posicionCuerpo[indiceParaMovimiento][0] = x; 
+	posicionCuerpo[indiceParaMovimiento][1] = y;
+	indiceParaMovimiento++;              
+	if (indiceParaMovimiento == largodecola)
 	{
-		indiceParaMovimiento = 1; // reiniciamos el numero de partes del cuerpo de la serpiente
+		indiceParaMovimiento = 1; 
 	}
 }
 bool Viborita :: chocaContraSi()
@@ -78,7 +80,8 @@ void Viborita :: start()
 	{   
 		borrar();
 		guardarPosicion();				
-		dibujar();	
+		dibujar();
+		
 		cambiarDireccion();
 		cambiarDireccion();
 		mover();

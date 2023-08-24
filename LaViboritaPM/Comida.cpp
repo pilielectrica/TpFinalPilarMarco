@@ -3,7 +3,7 @@
 #include <iostream>
 #include <conio2.h>
 #include <ctime>
-#include <deque>
+
 
 using namespace std;
 

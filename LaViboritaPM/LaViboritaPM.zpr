@@ -15,7 +15,7 @@ tab_width=4
 tab_use_spaces=0
 explorer_path=.
 inherits_from=
-current_source=Pelota.cpp
+current_source=Juego.cpp
 path_char=\
 [source]
 path=main.cpp
@@ -23,12 +23,12 @@ cursor=2:0
 open=true
 [source]
 path=Pelota.cpp
-cursor=15:11
+cursor=61:4
 marker=91
 open=true
 [source]
 path=Viborita.cpp
-cursor=77:5
+cursor=75:1
 open=true
 [source]
 path=Comida.cpp
@@ -36,7 +36,7 @@ cursor=42:0
 open=true
 [source]
 path=Juego.cpp
-cursor=18:13
+cursor=75:1
 open=true
 [source]
 path=Tablero.cpp
