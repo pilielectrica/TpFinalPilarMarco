@@ -16,8 +16,8 @@ Pelota::Pelota(int velocidad, int color=WHITE){
 	col=color;
 	direccionX = 1;
 	direccionY = 1;
-	x=rand()%17+1;
-	y=rand()%17+1;
+	x = (rand()%78 + 2);
+	y = (rand()%18 + 2);
 	
 }
 
@@ -47,19 +47,19 @@ void Pelota::dibujar(){
 
 void Pelota::mover(){
 	
-	
-	if (x >= bordeDer) {
-		direccionX = -1;
-	}
-	if (x <= bordeIzq) {
-		direccionX = 1;
-	}
-	if (y <= bordeSup) {
-		direccionY = 1;
-	}
-	if (y >= bordeInf) {
-		direccionY = -1;
-	}
+		
+//	if (x >= bordeDer) {
+//		direccionX = -1;
+//	}
+//	if (x <= bordeIzq) {
+//		direccionX = 1;
+//	}
+//	if (y <= bordeSup) {
+//		direccionY = 1;
+//	}
+//	if (y >= bordeInf) {
+//		direccionY = -1;
+//	}
 	x = x + (1 * direccionX);
 	gotoxy(x,y);
 	y = y + (1 * direccionY);    

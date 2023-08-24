@@ -17,6 +17,7 @@ protected:
 	int direccionY;
 	int col;
 	int x,y;
+	bool sestaMoviendo = false;
 	
 	Pelota(){};
 	

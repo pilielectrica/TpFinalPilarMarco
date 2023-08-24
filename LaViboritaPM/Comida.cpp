@@ -40,3 +40,4 @@ using namespace std;
 //		tempo=clock();
 //	}
 //}
+

@@ -15,6 +15,8 @@ Juego::Juego()
 	viborita =  Viborita(25,14);
 	comida =  Comida(20,1);
 	tablero = Tablero();
+	viborita.setx(2);
+	viborita.sety(2);
 }
 
 
@@ -33,8 +35,8 @@ void Juego::cambiarPosicion()
 {   
 	if (comprobarChoque() == true)
 	{   
-		comida.setx(rand()%77 + 1);
-		comida.sety(rand()%17 + 1);
+		comida.setx(rand()%78 + 2);
+		comida.sety(rand()%18 + 2);
 	}	
 }
 
@@ -44,8 +46,11 @@ void Juego::startComida()
 	
 	
 	if(comida.gettempo()+comida.getpaso()<clock()){
-		comida.borrar();
+		
+
 		cambiarPosicion();
+		comida.borrar();
+		
 		comida.dibujar();
 	    newtempo = comida.gettempo();
 		newtempo = clock();
@@ -81,7 +86,7 @@ void Juego::startViboritaYPelotita()
 		tablero.dibujarTablero();		
 		viborita.start();
 		startComida();
-		Sleep(80);
+		Sleep(60);
 	}
 	
 }

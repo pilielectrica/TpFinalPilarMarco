@@ -19,6 +19,7 @@ public:
 	Viborita(){};
 	int largodecola = 6;
 	bool chocaContraSi();
+	
 private:
 	int posicionCuerpo[200][2];
 	

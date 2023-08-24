@@ -18,18 +18,22 @@ void Viborita :: cambiarDireccion ()
 		case 72: //arriba
 			direccionX = 0;
 			direccionY = -1;
+			
 			break;	
 		case 75: //izquierda
 			direccionX = -1;
 			direccionY = 0;
+			
 			break;
 		case 77: //derecha
 			direccionX = 1;
 			direccionY = 0;
+			
 			break;
 		case 80: //abajo
 			direccionX = 0;
 			direccionY = 1;
+			
 		}
 	}
 //	x = x + (1 * direccionX);
@@ -74,9 +78,11 @@ void Viborita :: start()
 	{   
 		borrar();
 		guardarPosicion();				
-		dibujar();		
+		dibujar();	
+		cambiarDireccion();
 		cambiarDireccion();
 		mover();
+		
 		int newtempo2 = tempo;
 		newtempo2 = clock();	
 	}
