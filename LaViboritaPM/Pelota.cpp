@@ -16,8 +16,8 @@ Pelota::Pelota(int velocidad, int color=WHITE){
 	col=color;
 	direccionX = 1;
 	direccionY = 1;
-	x=rand()%20+2;
-	y=rand()%20+2;
+	x=rand()%17+1;
+	y=rand()%17+1;
 	
 }
 

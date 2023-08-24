@@ -23,7 +23,7 @@ protected:
 	/*	int veceschoque = 0;*/
 public:
 	void borrar();
-	void dibujar();
+	virtual void dibujar();
 	void mover();
 	Pelota(int velocidad,int color);
 	virtual void start();
