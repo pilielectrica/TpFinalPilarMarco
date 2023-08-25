@@ -7,6 +7,7 @@
 #include "Pelota.h"
 using namespace std;
 
+
 void Viborita :: cambiarDireccion ()
 {
 	if (_kbhit())
@@ -18,7 +19,7 @@ void Viborita :: cambiarDireccion ()
 		case 72: //arriba
 			direccionX = 0;
 			direccionY = -1;
-			Sleep(25);
+			Sleep(25);//para que se mueva arriba un poco más lento y más cercano a como se mueve para izq y der.
 			
 			break;	
 		case 75: //izquierda
@@ -34,13 +35,11 @@ void Viborita :: cambiarDireccion ()
 		case 80: //abajo
 			direccionX = 0;
 			direccionY = 1;
-			Sleep(25);
+			Sleep(25);//para que se mueva abajo un poco más lento y más cercano a como se mueve para izq y der.
 			
 		}
 	}
-//	x = x + (1 * direccionX);
-////	gotoxy(x,y);
-////	y = y + (1 * direccionY);
+
 }
 
 void Viborita :: dibujar ()
@@ -48,10 +47,10 @@ void Viborita :: dibujar ()
 	for (int i = 1; i < largodecola-1; i++)
 	{
 		gotoxy(posicionCuerpo[i][0], posicionCuerpo[i][1]);
-		cout << "O";
+		cout << (char)79;
 	}
 }
-void Viborita::guardarPosicion() 
+void Viborita::guardarPosicion() //guarda la posicion del cuerpo y hace crecer el cuerpo de la viborita
 {
 	posicionCuerpo[indiceParaMovimiento][0] = x; 
 	posicionCuerpo[indiceParaMovimiento][1] = y;
@@ -65,6 +64,7 @@ bool Viborita :: chocaContraSi()
 {
 	for (int i = largodecola - 1; i > 0; i--)
 	{
+		if (direccionX == 0 && direccionY == 0){return false;}
 		if (posicionCuerpo[i][0] == x && posicionCuerpo[i][1] == y)
 		{
 			return true;
@@ -83,7 +83,7 @@ void Viborita :: start()
 		dibujar();
 		
 		cambiarDireccion();
-		cambiarDireccion();
+		cambiarDireccion();//duplicación del método para doblar más ágilmente
 		mover();
 		
 		int newtempo2 = tempo;

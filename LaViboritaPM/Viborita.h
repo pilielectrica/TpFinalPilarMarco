@@ -9,16 +9,17 @@ using namespace std;
 
 class Viborita : public Pelota
 {
+	
 public: 
-	Viborita(int vel, int col) : Pelota (vel, col){};
+	Viborita(int vel, int col) : Pelota (vel, col){direccionX = 0; direccionY = 0;};
 	void cambiarDireccion();
 	void dibujar();
 	void start();
 	void guardarPosicion();
-	void setlargodecola(int larcol);
-	Viborita(){};
+	void setlargodecola(int larcol);	
 	int largodecola = 6;
 	bool chocaContraSi();
+	Viborita(){};
 	
 private:
 	int posicionCuerpo[200][2];

@@ -7,11 +7,9 @@
 #include "Comida.h"
 #include "Tablero.h"
 
-
-
-
 class Juego
 {
+	
 public:
 	Juego();
 	bool comprobarChoque();
@@ -30,7 +28,6 @@ private:
 	clock_t newtempo;
 	int puntaje = 0;
 	bool ganaste;
-
 };
 
 #endif

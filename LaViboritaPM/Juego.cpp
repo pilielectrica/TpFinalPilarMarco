@@ -15,13 +15,11 @@ Juego::Juego()
 	viborita =  Viborita(25,14);
 	comida =  Comida(20,12);
 	tablero = Tablero();
-	viborita.setx(2);
+	viborita.setx(2);//para que aparezca arriba a la izquierda fijo, al inicio
 	viborita.sety(2);
 }
 
-
-
-bool Juego::comprobarChoque()
+bool Juego::comprobarChoque()//comprobar colisión entre viborita y comida
 { 
 	if ((viborita.getx() == comida.getx()) &&(viborita.gety() == comida.gety()) )
 	{   
@@ -32,7 +30,7 @@ bool Juego::comprobarChoque()
 	}
 	return false;
 }
-void Juego::cambiarPosicion()
+void Juego::cambiarPosicion()//cambiar posicion de la comida si hay colisión
 {   
 	if (comprobarChoque() == true)
 	{   
@@ -57,22 +55,24 @@ void Juego::startComida()
 		newtempo = clock();
 	}
 }
-bool Juego::GameOver()
+bool Juego::GameOver()//se pierde si se toca el margen o se choca la viborita contra sí
 {
 	if (viborita.getx() == bordeIzq || viborita.getx() == bordeDer || viborita.gety() == bordeSup || viborita.gety() == bordeInf)
 	{   textcolor(RED);
-		cout <<endl<<endl<<"                          PERDISTE   "<<endl<<endl<<endl;
-		return true;		
+		cout <<endl<<endl<<"                         PERDISTE   "<<endl<<endl<<endl;
+		return true;
+		
 	}
    if (viborita.chocaContraSi() == true)
 	   
 	{   textcolor(RED);
-		   cout <<endl<<endl<< "                        PERDISTE   "<<endl<<endl<<endl;
+		cout <<endl<<endl<< "                        PERDISTE   "<<endl<<endl<<endl;
 		return true;
+		
 	}
    return false;
 }
-void Juego :: mostrarInformacion()
+void Juego :: mostrarInformacion()//mostrar puntaje, controles y cuando ganaste al llegar a los 2000 puntos
 {  SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),{0,0});// para congelar pantalla y parar el flickering
 	cout << endl << endl << endl << endl <<endl << endl <<endl << endl <<endl << endl <<endl << endl <<endl << endl <<endl << endl <<endl << endl <<endl << endl << "PUNTAJE: " << puntaje;
 	cout << endl << "CONTROLA LA VIBORITA CON LAS FLECHITAS :) ";
@@ -80,17 +80,17 @@ void Juego :: mostrarInformacion()
 	if (puntaje == 2000){cout << endl <<  " ¡¡GANASTE!! "<< endl; ganaste = true;}
 	textcolor(BLUE);
 }
+
 void Juego::startViboritaYPelotita()
 {  
 	
-	while (!GameOver() && !ganaste)
-	{  
-		
+	do
+	{ 		
 		tablero.dibujarTablero();		
 		viborita.start();
 		startComida();
 		mostrarInformacion();
 		Sleep(60);
 	}
-	
+	while (!GameOver() && !ganaste);
 }

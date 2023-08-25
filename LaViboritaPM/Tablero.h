@@ -5,13 +5,15 @@
 #include <string>
 
 using namespace std;
-class Tablero {
+class Tablero 
+{
 
 private:
-	string tablero [20][80];
+	
 public:
 	void dibujarTablero();
 	Tablero(){};
+	
 };
 
 #endif

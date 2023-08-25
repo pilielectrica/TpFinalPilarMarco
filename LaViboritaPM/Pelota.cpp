@@ -9,23 +9,23 @@ const int bordeIzq = 1;
 const int bordeDer = 80;
 const int bordeInf = 20;
 
-Pelota::Pelota(int velocidad, int color=WHITE){
-	
+Pelota::Pelota(int velocidad, int color=WHITE)
+{	
 	paso=CLOCKS_PER_SEC/velocidad;
 	tempo=clock();
 	col=color;
 	direccionX = 1;
 	direccionY = 1;
 	x = (rand()%78 + 2);
-	y = (rand()%18 + 2);
-	
+	y = (rand()%18 + 2);	
 }
 
 void Pelota::start(){
 	textcolor(col);
 	
 	
-	if(tempo+paso<clock()){
+	if(tempo+paso<clock())
+	{
 		borrar();
 		mover();
 		dibujar();
@@ -33,37 +33,25 @@ void Pelota::start(){
 	}
 }
 
-void Pelota::borrar(){
+void Pelota::borrar()
+{
 	gotoxy(x,y);
 	textcolor(7);
 	cout<<' ';
 	textcolor(col);
 }
 
-void Pelota::dibujar(){
+void Pelota::dibujar()
+{
 	gotoxy(x,y);
 	cout<<figura;
 }
 
-void Pelota::mover(){
-	
-		
-//	if (x >= bordeDer) {
-//		direccionX = -1;
-//	}
-//	if (x <= bordeIzq) {
-//		direccionX = 1;
-//	}
-//	if (y <= bordeSup) {
-//		direccionY = 1;
-//	}
-//	if (y >= bordeInf) {
-//		direccionY = -1;
-//	}
+void Pelota::mover()
+{		
 	x = x + (1 * direccionX);
 	gotoxy(x,y);
-	y = y + (1 * direccionY);    
-	
+	y = y + (1 * direccionY); 	
 }
 
 int Pelota :: getx()
@@ -86,15 +74,14 @@ void Pelota :: sety(int posy)
 int Pelota :: getcol()
 {
 	return col;
-}clock_t Pelota :: getpaso()
+}
+clock_t Pelota :: getpaso()
 {
 	return paso;
 }
 
 clock_t Pelota :: gettempo()
-	
-{   
-
+{  
 	return tempo;
 }
 

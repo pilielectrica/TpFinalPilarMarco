@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void Tablero :: dibujarTablero()
+void Tablero :: dibujarTablero()//tablero rudimentario, porque no me daba tanto flickering que haciendolo con arrays.
 {  SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),{0,0});// para congelar pantalla y parar el flickering
 	
 textcolor(BLUE);

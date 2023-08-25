@@ -18,16 +18,7 @@ const int bordeInf = 20;
 
 int main(int argc, char *argv[]) {
 	srand(time(NULL));
-//	Pelotita pelotita(30,1);
-//	Viborita viborita(20,14);
-	
-	/*pelotita.setViborita(&viborita);*/
-	
-//	while(true){
-//		pelotita.start();
-//		viborita.start();
-//	}
-//	
+
 	
 	Juego Jugar;
 	Jugar.startViboritaYPelotita();
